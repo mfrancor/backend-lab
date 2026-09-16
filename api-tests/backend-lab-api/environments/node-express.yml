@@ -1,0 +1,6 @@
+name: node-express
+variables:
+  - name: baseUrl
+    value: http://localhost:3000
+  - name: id-produto
+    value: 43efd6ec-4a3c-4669-b592-c46ffa5d2299

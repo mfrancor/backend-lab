@@ -1,0 +1,17 @@
+services:
+  postgres:
+    image: postgres:18.3-alpine3.23
+    container_name: backendlab-postgres
+    environment:
+      POSTGRES_DB: backendlab
+      POSTGRES_USER: backendlabuser
+      POSTGRES_PASSWORD: backendlabpass
+    ports:
+      - '5433:5432'
+    volumes:
+      - be_labpostgres_data:/var/lib/postgresql
+    restart: unless-stopped
+
+volumes:
+  be_labpostgres_data:
+    driver: local

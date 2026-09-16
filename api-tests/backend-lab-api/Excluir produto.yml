@@ -1,0 +1,14 @@
+info:
+  name: Excluir produto
+  type: http
+
+http:
+  method: DELETE
+  url: "{{baseUrl}}/produto/{{id-produto}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

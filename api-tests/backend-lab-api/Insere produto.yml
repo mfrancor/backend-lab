@@ -1,0 +1,33 @@
+info:
+  name: Insere produto
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: '{{baseUrl}}/produto'
+  body:
+    type: json
+    data: |-
+      {
+        "nome": "Queijo",
+        "preco": 39.90,
+        "quantidade": 10,
+        "detalhe": "node-express"
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        const id = res.body.id;
+        if (id) {
+            bru.setEnvVar("id-produto", id, { persist: true });
+        }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
