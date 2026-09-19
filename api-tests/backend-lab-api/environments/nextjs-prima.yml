@@ -1,8 +1,8 @@
-name: node-express
+name: nextjs-prima
 variables:
   - name: baseUrl
     value: http://localhost:3000
   - name: id-produto
-    value: 2de6a90c-05af-412e-8796-239fd761911a
+    value: 72a0a77a-789d-4c25-aed2-dff0f49e37bd
   - name: detalhe
-    value: node-express
+    value: nextjs-prima

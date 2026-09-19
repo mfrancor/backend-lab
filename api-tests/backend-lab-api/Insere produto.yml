@@ -10,15 +10,19 @@ http:
     type: json
     data: |-
       {
-        "nome": "Queijo",
-        "preco": 39.90,
-        "quantidade": 10,
-        "detalhe": "node-express"
+        "nome": "cerveja",
+        "preco": 10,
+        "quantidade": 2
       }
   auth: inherit
 
 runtime:
   scripts:
+    - type: before-request
+      code: |-
+        const body = req.getBody();
+        body.detalhe = bru.getEnvVar("detalhe");
+        req.setBody(body);
     - type: after-response
       code: |-
         const id = res.body.id;
